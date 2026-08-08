@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# claude code session state
+.claude
+
+# stray deploy payload dump
+deploy_payload.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
