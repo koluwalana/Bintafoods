@@ -241,8 +241,7 @@ export default function AboutPage() {
 
           <div className="mt-12 bg-gradient-to-r from-primary via-primary-dark to-primary rounded-[2rem] p-8 sm:p-12 text-center text-white">
             <p className="text-xl sm:text-2xl font-black leading-relaxed">
-              Binta Rice Flour: Gluten-Free. Easy to Digest.{" "}
-              <span className="text-secondary-light">Made for Nigerian Kitchens.</span>
+              Binta Rice Flour: Gluten-Free. Easy to Digest.
             </p>
           </div>
         </div>
