@@ -6,6 +6,7 @@ import {
   MapPin,
   AtSign,
 } from "lucide-react";
+import NewsletterForm from "./NewsletterForm";
 
 export default function Footer() {
   return (
@@ -73,16 +74,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm mb-3">
               Get updates on new products and exclusive offers.
             </p>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-primary"
-              />
-              <button className="px-4 py-2 bg-primary hover:bg-primary-dark text-white text-sm font-medium rounded-lg transition-colors">
-                Join
-              </button>
-            </div>
+            <NewsletterForm />
           </div>
         </div>
 

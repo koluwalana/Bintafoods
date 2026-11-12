@@ -22,6 +22,7 @@ export default function CheckoutPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const paymentMethod = "transfer";
   const [copied, setCopied] = useState(false);
+  const [paymentConfirmed, setPaymentConfirmed] = useState(false);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -52,6 +53,7 @@ export default function CheckoutPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!paymentConfirmed) return;
     setIsSubmitting(true);
 
     try {
@@ -371,14 +373,36 @@ export default function CheckoutPage() {
                   </div>
                 </div>
 
+                <label className="flex items-start gap-3 mb-4 p-3 bg-cream rounded-xl cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={paymentConfirmed}
+                    onChange={(e) => setPaymentConfirmed(e.target.checked)}
+                    className="mt-0.5 w-4 h-4 accent-primary shrink-0"
+                  />
+                  <span className="text-xs text-foreground">
+                    I confirm I have transferred{" "}
+                    <span className="font-bold text-primary">
+                      {formatPrice(grandTotal)}
+                    </span>{" "}
+                    to Sterling Bank, BintaFoods (0093173169).
+                  </span>
+                </label>
+
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !paymentConfirmed}
                   className="w-full py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-full font-bold text-lg hover:shadow-xl hover:shadow-primary/25 transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
                 >
                   <Lock className="w-4 h-4" />
                   {isSubmitting ? "Processing..." : "Place Order"}
                 </button>
+
+                {!paymentConfirmed && (
+                  <p className="text-xs text-text-muted text-center mt-2">
+                    Please confirm your payment above to place the order.
+                  </p>
+                )}
 
                 <p className="text-xs text-text-muted text-center mt-3 flex items-center justify-center gap-1">
                   <Lock className="w-3 h-3" />

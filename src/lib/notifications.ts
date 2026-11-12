@@ -45,6 +45,31 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#39;");
 }
 
+// Notify the business when someone subscribes to the newsletter.
+export async function sendNewsletterNotification(
+  subscriberEmail: string
+): Promise<void> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const to =
+    process.env.NEWSLETTER_NOTIFICATION_EMAIL ||
+    process.env.ORDER_NOTIFICATION_EMAIL;
+  if (!apiKey || !to) return;
+
+  const resend = new Resend(apiKey);
+  const safe = escapeHtml(subscriberEmail);
+
+  await resend.emails.send({
+    from: process.env.RESEND_FROM_EMAIL || "orders@resend.dev",
+    to,
+    subject: "New newsletter subscriber",
+    html: `
+      <h2>New Newsletter Subscriber</h2>
+      <p>Someone subscribed to product updates on the Binta Foods website:</p>
+      <p><strong>${safe}</strong></p>
+    `,
+  });
+}
+
 export async function sendOrderNotifications(order: OrderPayload): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.ORDER_NOTIFICATION_EMAIL;
