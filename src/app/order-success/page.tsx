@@ -58,7 +58,9 @@ function OrderSuccessContent() {
             <ArrowRight className="w-5 h-5" />
           </Link>
           <a
-            href="tel:08138070191"
+            href="https://wa.me/2348138070191"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-card-border rounded-full font-bold hover:border-primary hover:text-primary transition-all"
           >
             <Phone className="w-5 h-5" />
