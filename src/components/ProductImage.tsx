@@ -9,15 +9,15 @@ interface ProductImageProps {
 }
 
 const gradients: Record<string, string> = {
-  "1KG": "from-violet-300 via-fuchsia-300 to-purple-400",
-  "5KG": "from-amber-300 via-orange-300 to-yellow-400",
-  "10KG": "from-rose-300 via-red-300 to-pink-400",
+  "1KG": "from-fuchsia-500 via-purple-500 to-indigo-600",
+  "5KG": "from-amber-400 via-orange-500 to-rose-500",
+  "10KG": "from-cyan-400 via-sky-500 to-blue-600",
 };
 
 const accentColors: Record<string, string> = {
-  "1KG": "from-violet-400 to-purple-500",
-  "5KG": "from-amber-400 to-orange-500",
-  "10KG": "from-red-400 to-rose-500",
+  "1KG": "from-fuchsia-500 to-indigo-600",
+  "5KG": "from-orange-500 to-rose-500",
+  "10KG": "from-sky-500 to-blue-600",
 };
 
 const bagColors: Record<string, { top: string; bottom: string; accent: string }> = {
