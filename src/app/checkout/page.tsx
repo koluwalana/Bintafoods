@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Lock, ShoppingBag, CreditCard, Banknote, Copy, Check } from "lucide-react";
+import { ArrowLeft, Lock, ShoppingBag, CreditCard, Banknote, Copy, Check, Phone } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/products";
 import ProductImage from "@/components/ProductImage";
@@ -290,6 +290,21 @@ export default function CheckoutPage() {
                   <p className="text-xs text-text-muted mt-3 bg-white/60 p-2 rounded-lg">
                     After payment, place your order and we&apos;ll confirm receipt and process delivery.
                   </p>
+
+                  <div className="mt-3 flex items-start gap-2 bg-primary/5 border border-primary/10 p-3 rounded-lg">
+                    <Phone className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    <p className="text-xs text-foreground">
+                      Once you&apos;ve paid, call{" "}
+                      <a href="tel:08138070191" className="font-bold text-primary">
+                        08138070191
+                      </a>{" "}
+                      or{" "}
+                      <a href="tel:09137447992" className="font-bold text-primary">
+                        09137447992
+                      </a>{" "}
+                      to confirm your payment.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
