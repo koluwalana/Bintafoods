@@ -9,9 +9,9 @@ interface ProductImageProps {
 }
 
 const gradients: Record<string, string> = {
-  "1KG": "from-violet-50 via-purple-50 to-fuchsia-50",
-  "5KG": "from-amber-50 via-orange-50 to-yellow-50",
-  "10KG": "from-red-50 via-rose-50 to-pink-50",
+  "1KG": "from-violet-300 via-fuchsia-300 to-purple-400",
+  "5KG": "from-amber-300 via-orange-300 to-yellow-400",
+  "10KG": "from-rose-300 via-red-300 to-pink-400",
 };
 
 const accentColors: Record<string, string> = {
